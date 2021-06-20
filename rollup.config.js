@@ -18,16 +18,16 @@ export default [
     ...baseConfig,
     output: [
       {
-        file: 'dist/javascript-utils.cjs.js',
+        file: pkg.main,
         format: 'cjs'
       },
       {
-        file: 'dist/javascript-utils.ejs.js',
+        file: pkg.module,
         format: 'es'
       },
       {
         name: 'javascriptUtils',
-        file: 'dist/javascript-utils.umd.js',
+        file: pkg.browser,
         format: 'umd'
       }
     ]
@@ -36,18 +36,18 @@ export default [
     ...baseConfig,
     output: [
       {
-        file: pkg.main,
+        file: 'dist/javascript-utils.cjs.min.js',
         format: 'cjs',
         plugins: [uglify()]
       },
       {
-        file: pkg.module,
+        file: 'dist/javascript-utils.esm.min.js',
         format: 'es',
         plugins: [uglify()]
       },
       {
         name: 'javascriptUtils',
-        file: pkg.browser,
+        file: 'dist/javascript-utils.umd.min.js',
         format: 'umd',
         plugins: [uglify()]
       }

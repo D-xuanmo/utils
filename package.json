@@ -2,9 +2,9 @@
   "name": "@xuanmo/javascript-utils",
   "version": "0.0.1",
   "private": false,
-  "main": "dist/javascript-utils.cjs.min.js",
-  "module": "dist/javascript-utils.esm.min.js",
-  "browser": "dist/javascript-utils.umd.min.js",
+  "main": "dist/javascript-utils.cjs.js",
+  "module": "dist/javascript-utils.esm.js",
+  "browser": "dist/javascript-utils.umd.js",
   "types": "dist/types/index.d.ts",
   "scripts": {
     "dev": "npm run clear && rollup -c -w",
