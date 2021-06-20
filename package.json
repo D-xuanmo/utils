@@ -1,7 +1,11 @@
 {
   "name": "@xuanmo/javascript-utils",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": false,
+  "author": {
+    "name": "xuanmo",
+    "email": "me@xuanmo.xin"
+  },
   "main": "dist/javascript-utils.cjs.js",
   "module": "dist/javascript-utils.esm.js",
   "browser": "dist/javascript-utils.umd.js",
@@ -13,6 +17,10 @@
     "lint": "eslint src/**/*.ts --fix"
   },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/D-xuanmo/javascript-utils"
+  },
   "devDependencies": {
     "@babel/core": "^7.14.6",
     "@babel/preset-env": "^7.14.5",
