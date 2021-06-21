@@ -6,7 +6,7 @@
 export const isObject = (source: any): boolean => Object.prototype.toString.call(source) === '[object Object]'
 
 /**
- * 是否为正则
+ * 是否为正则表达式
  * @param {any} source
  * @returns {boolean}
  */
