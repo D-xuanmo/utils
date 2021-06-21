@@ -21,6 +21,8 @@ import { debounce } from '@xuanmo/javascript-utils'
 |isRegexp|是否为正则表达式|
 |isFunction|是否为函数|
 |isImageUrl|判断 url 是否为图片路径|
+|isEmpty|是否为空|
+|formatterMoney|金额千分位|
 |countDown|倒计时|
 |debounce|防抖|
 |deepCopy|深拷贝|

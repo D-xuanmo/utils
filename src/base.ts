@@ -1,6 +1,6 @@
 /**
  * 是否为对象
- * @param {any} source 数据源
+ * @param {any} source
  * @returns {boolean}
  */
 export const isObject = (source: any): boolean => Object.prototype.toString.call(source) === '[object Object]'
@@ -25,3 +25,23 @@ export const isFunction = (source: any): boolean => Object.prototype.toString.ca
  * @returns {boolean}
  */
 export const isImageUrl = (url: string): boolean => /\.((png)|(jpe?g)|(gif)|(svg)|(webp))$/ig.test(url)
+
+/**
+ * 是否为空
+ * @param {any} source
+ * @returns {boolean}
+ */
+export const isEmpty = (source: any): boolean => {
+  if (Array.isArray(source)) return source.length === 0
+
+  if (isObject(source)) return Object.keys(source).length === 0
+
+  return [null, undefined, ''].includes(source)
+}
+
+/**
+ * 金额千分位
+ * @param {string} str 需要格式化的数字
+ * @returns {string}
+ */
+export const formatterMoney = (str: string): string => `${str}`.replace(/\d{1,3}(?=(\d{3})+$)/g, '$&,')

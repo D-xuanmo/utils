@@ -2,8 +2,8 @@ import { isObject } from './base'
 
 /**
  * 深拷贝
- * @param {array | object} data
- * @returns {*}
+ * @param {any} data
+ * @returns {any}
  */
 export default function deepCopy(data: any): any {
   if (isObject(data) || Array.isArray(data)) {
