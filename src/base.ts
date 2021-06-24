@@ -45,3 +45,19 @@ export const isEmpty = (source: any): boolean => {
  * @returns {string}
  */
 export const formatterMoney = (str: string): string => `${str}`.replace(/\d{1,3}(?=(\d{3})+$)/g, '$&,')
+
+/**
+ * 下划线转小驼峰
+ * @param {string} str 转换字符串：user_info => userInfo
+ * @returns {boolean}
+ */
+export const toLowerCamelCase = (str: string): string => {
+  return str.replace(/((?<=[a-z])_[a-z])/g, $1 => $1.replace(/_/, '').toLocaleUpperCase())
+}
+
+/**
+ * 小驼峰转下划线分割
+ * @param {string} str 转换字符串：userInfo => user_info
+ * @returns {boolean}
+ */
+export const toUnderline = (str: string): string => str.replace(/([A-Z])/g, $1 => `_${$1.toLocaleLowerCase()}`)
