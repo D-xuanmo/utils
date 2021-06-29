@@ -26,7 +26,7 @@ export default [
         format: 'es'
       },
       {
-        name: 'javascriptUtils',
+        name: 'JSUtils',
         file: pkg.browser,
         format: 'umd'
       }

@@ -52,7 +52,7 @@ export const formatterMoney = (str: string): string => `${str}`.replace(/\d{1,3}
  * @returns {boolean}
  */
 export const toLowerCamelCase = (str: string): string => {
-  return str.replace(/((?<=[a-z])_[a-z])/g, $1 => $1.replace(/_/, '').toLocaleUpperCase())
+  return str.replace(/[^_](_[a-z])+/, (match, $1) => $1.replace(/_/, '').toLocaleUpperCase())
 }
 
 /**
