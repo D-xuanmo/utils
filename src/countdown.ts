@@ -4,20 +4,23 @@
  * @param {string} timer 定时器名，用于挂载到 window
  * @param {function} endCallback 结束时的回调函数
  * @param {function} duringCallback 倒计时进行中的回调函数
- * @returns {number | undefined}
  */
-export default function countDown(time: number, timer: string, endCallback?: Function, duringCallback?: Function): number | undefined {
+export default function countdown(time: number, timer: string, endCallback?: Function, duringCallback?: Function): (() => void) | undefined {
   if (!window) throw new Error('window is not defind.')
-  let _timer: number = window.setTimeout(() => {}, 0)
   if (time > 0) {
     duringCallback && duringCallback()
     time--
-    _timer = window.setTimeout(() => {
-      countDown(time, timer, endCallback, duringCallback)
+
+    // @ts-ignore
+    window[timer] = window.setTimeout(() => {
+      countdown(time, timer, endCallback, duringCallback)
     }, 1000)
-    return _timer
+
+    // @ts-ignore
+    return () => clearTimeout(window[timer])
   }
 
-  clearTimeout(_timer)
+  // @ts-ignore
+  clearTimeout(window[timer])
   endCallback && endCallback()
 }

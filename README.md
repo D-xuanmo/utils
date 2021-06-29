@@ -25,7 +25,7 @@ import { debounce } from '@xuanmo/javascript-utils'
 |toLowerCamelCase|下划线转小驼峰|Y|
 |toUnderline|小驼峰转下划线分割|Y|
 |formatterMoney|金额千分位|Y|
-|countDown|倒计时|N|
+|countdown|倒计时|N|
 |debounce|防抖|Y|
 |deepCopy|深拷贝|Y|
 |searchParams|获取 URL 查询参数|Y|
