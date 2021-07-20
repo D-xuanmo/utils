@@ -61,3 +61,18 @@ export const toLowerCamelCase = (str: string): string => {
  * @returns {boolean}
  */
 export const toUnderline = (str: string): string => str.replace(/([A-Z])/g, $1 => `_${$1.toLocaleLowerCase()}`)
+
+/**
+ * 生成随机值
+ * @param {number} length 长度
+ * @returns {string}
+ */
+export const createRandomID = (length: number = 12): string => {
+  let result: string[] = []
+  let word = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
+  const wordLength = word.length
+  for (let i = 0; i < length; i++) {
+    result.push(word[Math.round(Math.random() * wordLength)])
+  }
+  return result.join('')
+}
