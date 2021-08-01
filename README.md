@@ -28,4 +28,5 @@ import { debounce } from '@xuanmo/javascript-utils'
 |countdown|倒计时|N|
 |debounce|防抖|Y|
 |deepCopy|深拷贝|Y|
-|searchParams|获取 URL 查询参数|Y|
+|searchParams|获取 URL 单个查询参数|Y|
+|formatQueryParame|获取 URL 全部查询参数|Y|
