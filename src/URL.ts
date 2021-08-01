@@ -15,7 +15,7 @@ export function searchParams(url: string = location?.search, key: string): strin
  * @param {string} params get 请求查询参数
  * @returns {object} [key: string]: string
  */
-export const formatQueryParame = (params: string): { [key: string]: string } => {
+export const formatQueryParams = (params: string): { [key: string]: string } => {
   const decodeParams = decodeURIComponent(params).replace('?', '').split('&')
   const result: {
     [key: string]: string;

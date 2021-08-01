@@ -29,4 +29,4 @@ import { debounce } from '@xuanmo/javascript-utils'
 |debounce|防抖|Y|
 |deepCopy|深拷贝|Y|
 |searchParams|获取 URL 单个查询参数|Y|
-|formatQueryParame|获取 URL 全部查询参数|Y|
+|formatQueryParams|获取 URL 全部查询参数|Y|
