@@ -16,12 +16,17 @@ export function searchParams(url: string = location?.search, key: string): strin
  * @returns {object} [key: string]: string
  */
 export const formatQueryParams = (params: string): { [key: string]: string } => {
-  const decodeParams = decodeURIComponent(params).replace('?', '').split('&')
+  const decodeParams = /\?(?<params>(.*)=.+)/.exec(decodeURIComponent(params))?.groups
+
+  if (!decodeParams) return {}
+
+  const newParams = decodeParams.params.split('&')
   const result: {
-    [key: string]: string;
+    [key: string]: string
   } = {}
-  for (let i = 0; i < decodeParams.length; i++) {
-    const item = decodeParams[i]
+
+  for (let i = 0; i < newParams.length; i++) {
+    const item = newParams[i]
     item.replace(/([^?&]*)=([^?&]*)/, (match, $1, $2) => {
       result[$1] = $2
       return match
