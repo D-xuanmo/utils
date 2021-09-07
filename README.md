@@ -24,9 +24,10 @@ import { debounce } from '@xuanmo/javascript-utils'
 |isEmpty|是否为空|Y|
 |toLowerCamelCase|下划线转小驼峰|Y|
 |toUnderline|小驼峰转下划线分割|Y|
-|formatterMoney|金额千分位|Y|
-|countdown|倒计时|N|
+|formatThousandth|数字千分位|Y|
+|countDown|倒计时|N|
 |debounce|防抖|Y|
 |deepCopy|深拷贝|Y|
 |searchParams|获取 URL 单个查询参数|Y|
 |formatQueryParams|获取 URL 全部查询参数|Y|
+|createRandomID|生成随机 ID|Y|

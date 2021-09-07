@@ -5,7 +5,7 @@
  * @param {function} endCallback 结束时的回调函数
  * @param {function} duringCallback 倒计时进行中的回调函数
  */
-export default function countdown(time: number, timer: string, endCallback?: Function, duringCallback?: Function): (() => void) | undefined {
+export default function countDown(time: number, timer: string, endCallback?: Function, duringCallback?: Function): (() => void) | undefined {
   if (!window) throw new Error('window is not defind.')
   if (time > 0) {
     duringCallback && duringCallback()
@@ -13,7 +13,7 @@ export default function countdown(time: number, timer: string, endCallback?: Fun
 
     // @ts-ignore
     window[timer] = window.setTimeout(() => {
-      countdown(time, timer, endCallback, duringCallback)
+      countDown(time, timer, endCallback, duringCallback)
     }, 1000)
 
     // @ts-ignore

@@ -40,11 +40,11 @@ export const isEmpty = (source: any): boolean => {
 }
 
 /**
- * 金额千分位
+ * 千分位
  * @param {string} str 需要格式化的数字
  * @returns {string}
  */
-export const formatterMoney = (str: string): string => `${str}`.replace(/\d{1,3}(?=(\d{3})+$)/g, '$&,')
+export const formatThousandth = (str: string): string => `${str}`.replace(/\d{1,3}(?=(\d{3})+$)/g, '$&,')
 
 /**
  * 下划线转小驼峰
