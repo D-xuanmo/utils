@@ -44,7 +44,11 @@ export const isEmpty = (source: any): boolean => {
  * @param {string} str 需要格式化的数字
  * @returns {string}
  */
-export const formatThousandth = (str: string): string => `${str}`.replace(/\d{1,3}(?=(\d{3})+$)/g, '$&,')
+export const formatThousandth = (str: string): string => {
+  const [integer, decimal = ''] = `${str}`.split('.')
+  const formatInteger = integer.replace(/\d{1,3}(?=(\d{3})+$)/g, '$&,')
+  return `${formatInteger}${decimal ? `.${decimal}` : ''}`
+}
 
 /**
  * 下划线转小驼峰
