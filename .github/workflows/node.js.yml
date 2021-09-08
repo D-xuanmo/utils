@@ -10,7 +10,7 @@ on:
 jobs:
   publish-npm:
 
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     # 任务的步骤
     steps:
