@@ -1,4 +1,5 @@
-# JavaScript Utils
+# JavaScript Utils [![Node.js CI](https://github.com/D-xuanmo/javascript-utils/actions/workflows/node.js.yml/badge.svg?branch=main)](https://github.com/D-xuanmo/javascript-utils/actions/workflows/node.js.yml)
+
 > 常用工具函数
 
 ## 安装
