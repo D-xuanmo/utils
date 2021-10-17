@@ -3,28 +3,32 @@
  * @param {any} source
  * @returns {boolean}
  */
-export const isObject = (source: any): boolean => Object.prototype.toString.call(source) === '[object Object]'
+export const isObject = (source: any): boolean =>
+  Object.prototype.toString.call(source) === '[object Object]'
 
 /**
  * 是否为正则表达式
  * @param {any} source
  * @returns {boolean}
  */
-export const isRegexp = (source: any): boolean => Object.prototype.toString.call(source) === '[object RegExp]'
+export const isRegexp = (source: any): boolean =>
+  Object.prototype.toString.call(source) === '[object RegExp]'
 
 /**
  * 是否为函数
  * @param {any} source
  * @returns {boolean}
  */
-export const isFunction = (source: any): boolean => Object.prototype.toString.call(source) === '[object Function]'
+export const isFunction = (source: any): boolean =>
+  Object.prototype.toString.call(source) === '[object Function]'
 
 /**
  * 判断 url 是否为图片路径
  * @param {string} url
  * @returns {boolean}
  */
-export const isImageUrl = (url: string): boolean => /\.((png)|(jpe?g)|(gif)|(svg)|(webp))$/ig.test(url)
+export const isImageUrl = (url: string): boolean =>
+  /\.((png)|(jpe?g)|(gif)|(svg)|(webp))$/gi.test(url)
 
 /**
  * 是否为空
@@ -57,7 +61,9 @@ export const formatThousandth = (str: string): string => {
  */
 export const toLowerCamelCase = (str: string): string => {
   if (typeof str !== 'string') return str
-  return str.replace(/(_[a-z])+/g, (match, $1) => $1.replace(/_/, '').toLocaleUpperCase())
+  return str.replace(/(_[a-z])+/g, (match, $1) =>
+    $1.replace(/_/, '').toLocaleUpperCase()
+  )
 }
 
 /**
@@ -67,7 +73,7 @@ export const toLowerCamelCase = (str: string): string => {
  */
 export const toUnderline = (str: string): string => {
   if (typeof str !== 'string') return str
-  return str.replace(/([A-Z])/g, $1 => `_${$1.toLocaleLowerCase()}`)
+  return str.replace(/([A-Z])/g, ($1) => `_${$1.toLocaleLowerCase()}`)
 }
 
 /**
@@ -77,7 +83,8 @@ export const toUnderline = (str: string): string => {
  */
 export const createRandomID = (length: number = 12): string => {
   let result: string[] = []
-  let word = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
+  let word =
+    '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
   const wordLength = word.length
   for (let i = 0; i < length; i++) {
     result.push(word[Math.round(Math.random() * wordLength)])
@@ -88,22 +95,24 @@ export const createRandomID = (length: number = 12): string => {
 /**
  * object key 转换为小驼峰
  * @param source 任意数据
+ * @param filterKey 指定需要遍历的 key
  * @returns
  */
-export function objectKeyToCamelCase(source: any): any {
+export function objectKeyToCamelCase(source: any, filterKey?: string): any {
   let result: any
   if (Array.isArray(source)) {
     result = []
     for (let i = 0; i < source.length; i++) {
-      result[i] = objectKeyToCamelCase(source[i])
+      const _source = filterKey && source[i][filterKey] ? source[i][filterKey] : source[i]
+      result[i] = objectKeyToCamelCase(_source)
     }
   } else if (isObject(source)) {
     result = {}
-    for (const [key, value] of Object.entries(source)) {
-      if (Array.isArray(value) || isObject(source)) {
+    const _source = filterKey && source[filterKey] ? source[filterKey] : source
+    for (const [key, value] of Object.entries(_source)) {
+      if (Array.isArray(value) || isObject(_source)) {
         result[toLowerCamelCase(key)] = objectKeyToCamelCase(value)
       } else {
-        console.log(111, key)
         result[toLowerCamelCase(key)] = value
       }
     }
