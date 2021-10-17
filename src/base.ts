@@ -57,7 +57,7 @@ export const formatThousandth = (str: string): string => {
  */
 export const toLowerCamelCase = (str: string): string => {
   if (typeof str !== 'string') return str
-  return str.replace(/(_[a-z])+/, (match, $1) => $1.replace(/_/, '').toLocaleUpperCase())
+  return str.replace(/(_[a-z])+/g, (match, $1) => $1.replace(/_/, '').toLocaleUpperCase())
 }
 
 /**
@@ -100,9 +100,10 @@ export function objectKeyToCamelCase(source: any): any {
   } else if (isObject(source)) {
     result = {}
     for (const [key, value] of Object.entries(source)) {
-      if (Array.isArray(value)) {
+      if (Array.isArray(value) || isObject(source)) {
         result[toLowerCamelCase(key)] = objectKeyToCamelCase(value)
       } else {
+        console.log(111, key)
         result[toLowerCamelCase(key)] = value
       }
     }
