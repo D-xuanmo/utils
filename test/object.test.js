@@ -7,7 +7,7 @@ const expected = {
     1,
     {
       age_we1: 999,
-      child_list: [
+      'child.list': [
         {
           user_name: 'tom',
           age: 18
@@ -35,5 +35,5 @@ const received = {
 }
 
 test('objectKeyToCamelCase', () => {
-  expect(JSON.stringify(objectKeyToCamelCase(expected))).toBe(JSON.stringify(received))
+  expect(JSON.stringify(objectKeyToCamelCase(expected, '', ['\\.']))).toBe(JSON.stringify(received))
 })
