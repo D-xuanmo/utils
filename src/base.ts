@@ -57,12 +57,14 @@ export const formatThousandth = (str: string): string => {
 /**
  * 下划线转小驼峰
  * @param {string} str 转换字符串：user_info => userInfo
- * @returns {boolean}
+ * @param {string[]} separators 扩展分隔符，默认分割下划线：_
+ * @returns {string}
  */
-export const toLowerCamelCase = (str: string): string => {
+export const toLowerCamelCase = (str: string, separators?: string[]): string => {
   if (typeof str !== 'string') return str
-  return str.replace(/(_[a-z])+/g, (match, $1) =>
-    $1.replace(/_/, '').toLocaleUpperCase()
+  const _separators = [...(separators || []), '_'].join('|')
+  return str.replace(new RegExp(`((${_separators})[a-z])+`, 'g'), (match, $1) =>
+    $1.replace(new RegExp(_separators), '').toLocaleUpperCase()
   )
 }
 
@@ -103,8 +105,7 @@ export function objectKeyToCamelCase(source: any, filterKey?: string): any {
   if (Array.isArray(source)) {
     result = []
     for (let i = 0; i < source.length; i++) {
-      const _source = filterKey && source[i][filterKey] ? source[i][filterKey] : source[i]
-      result[i] = objectKeyToCamelCase(_source)
+      result[i] = objectKeyToCamelCase(filterKey && source[i][filterKey] ? source[i][filterKey] : source[i])
     }
   } else if (isObject(source)) {
     result = {}

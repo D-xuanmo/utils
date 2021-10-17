@@ -14,4 +14,6 @@ test('toLowerCamelCase', () => {
   expect(toLowerCamelCase('user')).toBe('user')
   expect(toLowerCamelCase('user_name')).toBe('userName')
   expect(toLowerCamelCase('is_system_admin')).toBe('isSystemAdmin')
+  expect(toLowerCamelCase('user.name', ['\\.'])).toBe('userName')
+  expect(toLowerCamelCase('is.system.admin', ['\\.'])).toBe('isSystemAdmin')
 })
