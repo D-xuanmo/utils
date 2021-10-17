@@ -56,7 +56,8 @@ export const formatThousandth = (str: string): string => {
  * @returns {boolean}
  */
 export const toLowerCamelCase = (str: string): string => {
-  return str.replace(/[^_](_[a-z])+/, (match, $1) => $1.replace(/_/, '').toLocaleUpperCase())
+  if (typeof str !== 'string') return str
+  return str.replace(/(_[a-z])+/, (match, $1) => $1.replace(/_/, '').toLocaleUpperCase())
 }
 
 /**
@@ -64,7 +65,10 @@ export const toLowerCamelCase = (str: string): string => {
  * @param {string} str 转换字符串：userInfo => user_info
  * @returns {boolean}
  */
-export const toUnderline = (str: string): string => str.replace(/([A-Z])/g, $1 => `_${$1.toLocaleLowerCase()}`)
+export const toUnderline = (str: string): string => {
+  if (typeof str !== 'string') return str
+  return str.replace(/([A-Z])/g, $1 => `_${$1.toLocaleLowerCase()}`)
+}
 
 /**
  * 生成随机值
@@ -79,4 +83,31 @@ export const createRandomID = (length: number = 12): string => {
     result.push(word[Math.round(Math.random() * wordLength)])
   }
   return result.join('')
+}
+
+/**
+ * object key 转换为小驼峰
+ * @param source 任意数据
+ * @returns
+ */
+export function objectKeyToCamelCase(source: any): any {
+  let result: any
+  if (Array.isArray(source)) {
+    result = []
+    for (let i = 0; i < source.length; i++) {
+      result[i] = objectKeyToCamelCase(source[i])
+    }
+  } else if (isObject(source)) {
+    result = {}
+    for (const [key, value] of Object.entries(source)) {
+      if (Array.isArray(value)) {
+        result[toLowerCamelCase(key)] = objectKeyToCamelCase(value)
+      } else {
+        result[toLowerCamelCase(key)] = value
+      }
+    }
+  } else {
+    result = source
+  }
+  return result
 }

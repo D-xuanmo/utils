@@ -32,4 +32,5 @@ import { debounce } from '@xuanmo/javascript-utils'
 |searchParams|获取 URL 单个查询参数|Y|
 |formatQueryParams|获取 URL 全部查询参数|Y|
 |createRandomID|生成随机 ID|Y|
+|objectKeyToCamelCase|Object key 转换为小驼峰|Y|
 |ua|对 `navigator.userAgent` 进行解析|N|
