@@ -133,7 +133,7 @@ class UA {
 
       if (/^Macintosh/i.test($1)) {
         [, osVersion] = $1.match(/X\s((\d+(_|\.))+\d+)/) || []
-        this.info.os = 'Mac'
+        this.info.os = 'Macintosh'
         this.info.osVersion = osVersion.replace(/_/g, '.')
         return
       }
@@ -183,7 +183,7 @@ class UA {
 
   _formatBrowserVersion(str: string): BrowserType {
     try {
-      const [, name, version] = str.match(/([a-z]+)\/(\d+\.\d+)/i) || []
+      const [, name, version] = str.match(/([a-z]+)\/((\d+\.)+\d+)/i) || []
       const result: BrowserType = {
         browserVersion: version,
         browser: name === 'Edg' ? 'Edge' : name
