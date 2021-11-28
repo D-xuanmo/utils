@@ -61,7 +61,6 @@ export const formatThousandth = (str: string): string => {
  * @returns {string}
  */
 export const toLowerCamelCase = (str: string, separators?: string[]): string => {
-  if (typeof str !== 'string') return str
   const _separators = [...(separators || []), '_'].join('|')
   return str.replace(new RegExp(`((${_separators})[a-z])+`, 'g'), (match, $1) =>
     $1.replace(new RegExp(_separators), '').toLocaleUpperCase()
@@ -74,7 +73,6 @@ export const toLowerCamelCase = (str: string, separators?: string[]): string => 
  * @returns {boolean}
  */
 export const toUnderline = (str: string): string => {
-  if (typeof str !== 'string') return str
   return str.replace(/([A-Z])/g, ($1) => `_${$1.toLocaleLowerCase()}`)
 }
 
@@ -85,8 +83,7 @@ export const toUnderline = (str: string): string => {
  */
 export const createRandomID = (length: number = 12): string => {
   let result: string[] = []
-  let word =
-    '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
+  let word = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
   const wordLength = word.length
   for (let i = 0; i < length; i++) {
     result.push(word[Math.round(Math.random() * wordLength)])

@@ -37,7 +37,7 @@ class UA {
    * 解析后的结果
    * @private
    */
-  private info: InfoType = {
+  info: InfoType = {
     browser: '',
     browserZH: '',
     browserVersion: '',
@@ -91,12 +91,12 @@ class UA {
       : this.info.browserVersion
   }
 
-  init() {
+  private init() {
     try {
       this.getSystemName()
       this.getBrowserName()
     } catch (error) {
-      console.warn(`[UA Error] ${error}`)
+      console.warn(`[UA formatter error] ${error}`)
     }
   }
 
@@ -107,6 +107,7 @@ class UA {
     const [, $1] = this.agent.match(/^[a-z]+\/\d+\.\d+\s?\(([a-z\d\s:;./_-]+)\)/i) || []
     try {
       let osVersion = ''
+
       if (/^Windows\s(?!p)/i.test($1)) {
         [, osVersion] = $1.match(/NT\s(\d+\.\d+)/) || []
         this.info.os = 'Windows'
@@ -195,7 +196,7 @@ class UA {
       }
       return result
     } catch (error) {
-      console.warn(`[UA Error] ${error}`)
+      console.warn(`[UA formatter error] ${error}`)
       return {
         browser: 'Unknown',
         browserVersion: 'Unknown'
@@ -204,4 +205,7 @@ class UA {
   }
 }
 
-export default (agent = navigator.userAgent) => new UA(agent)
+export default function (agent = navigator.userAgent) {
+  const ua: UA = new UA(agent)
+  return ua.info
+}
