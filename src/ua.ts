@@ -263,9 +263,9 @@ class UA {
       }
 
       const result: Browser = {
-        browserVersion: version,
-        browser: browserName.en,
-        browserZH: browserName?.zh || browserName.en
+        browserVersion: version ?? 'Unknown',
+        browser: browserName.en ?? 'Unknown',
+        browserZH: (browserName?.zh || browserName.en) ?? 'Unknown'
       }
 
       // IE 浏览器特殊处理
