@@ -1,14 +1,14 @@
 {
   "name": "@xuanmo/javascript-utils",
-  "version": "0.0.27",
+  "version": "0.0.28",
   "private": false,
   "author": {
     "name": "xuanmo",
     "email": "me@xuanmo.xin"
   },
-  "main": "dist/javascript-utils.cjs.js",
-  "module": "dist/javascript-utils.esm.js",
-  "browser": "dist/javascript-utils.umd.js",
+  "main": "dist/javascript-utils.cjs.min.js",
+  "module": "dist/javascript-utils.esm.min.js",
+  "browser": "dist/javascript-utils.umd.min.js",
   "types": "dist/types/index.d.ts",
   "scripts": {
     "dev": "npm run clear && rollup -c -w",
