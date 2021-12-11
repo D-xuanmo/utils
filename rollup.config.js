@@ -24,16 +24,16 @@ export default [
     ...baseConfig,
     output: [
       {
-        file: pkg.main,
+        file: 'dist/javascript-utils.cjs.js',
         format: 'cjs'
       },
       {
-        file: pkg.module,
+        file: 'dist/javascript-utils.esm.js',
         format: 'es'
       },
       {
         name: 'JSUtils',
-        file: pkg.browser,
+        file: 'dist/javascript-utils.umd.js',
         format: 'umd'
       }
     ]
