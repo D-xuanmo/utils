@@ -38,3 +38,19 @@ import { debounce } from '@xuanmo/javascript-utils'
 | objectKeyToCamelCase |      Object key 转换为小驼峰       |     Y     |
 |          ua          | 对 `navigator.userAgent` 进行解析 |     N     |
 |       dCookie        |         `cookie` 操作          |     N     |
+
+### ua 示例
+```js
+import { ua } from '@xuanmo/javascript-utils'
+console.log(ua())
+// console.log(ua('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36'))
+// {
+//   "browser": "Chrome",
+//   "browserZH": "Chrome",
+//   "browserVersion": "96.0.4664.93",
+//   "os": "Macintosh",
+//   "osVersion": "10.15.7",
+//   "device": "PC",
+//   "engine": "WebKit"
+// }
+```
