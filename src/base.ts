@@ -1,44 +1,48 @@
 /**
+ * 获取真实类型
+ * @param source
+ */
+export const realType = (source: any): string => Object.prototype.toString.call(source)
+
+/**
  * 是否为对象
  * @param {any} source
  * @returns {boolean}
  */
-export const isObject = (source: any): boolean =>
-  Object.prototype.toString.call(source) === '[object Object]'
+export const isObject = (source: any): boolean => realType(source) === '[object Object]'
 
 /**
  * 是否为正则表达式
  * @param {any} source
  * @returns {boolean}
  */
-export const isRegexp = (source: any): boolean =>
-  Object.prototype.toString.call(source) === '[object RegExp]'
+export const isRegexp = (source: any): boolean => realType(source) === '[object RegExp]'
 
 /**
  * 是否为函数
  * @param {any} source
  * @returns {boolean}
  */
-export const isFunction = (source: any): boolean =>
-  Object.prototype.toString.call(source) === '[object Function]'
+export const isFunction = (source: any): boolean => realType(source) === '[object Function]'
 
 /**
  * 判断 url 是否为图片路径
  * @param {string} url
  * @returns {boolean}
  */
-export const isImageUrl = (url: string): boolean =>
-  /\.((png)|(jpe?g)|(gif)|(svg)|(webp))$/gi.test(url)
+export const isImageUrl = (url: string): boolean => /\.((png)|(jpe?g)|(gif)|(svg)|(webp))$/gi.test(url)
 
 /**
  * 是否为空
- * @param {any} source
+ * @param {any} source 任意数据
  * @returns {boolean}
  */
 export const isEmpty = (source: any): boolean => {
   if (Array.isArray(source)) return source.length === 0
 
   if (isObject(source)) return Object.keys(source).length === 0
+
+  if (['[object Set]', '[object Map]'].includes(realType(source))) return source.size === 0
 
   return [null, undefined, ''].includes(source)
 }
