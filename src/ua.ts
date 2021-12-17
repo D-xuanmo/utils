@@ -184,7 +184,7 @@ class UA {
         [, osVersion] = $1.match(/X\s((\d+(_|\.))+\d+)/) || []
         this.info.os = 'Macintosh'
         this.info.device = 'PC'
-        this.info.osVersion = osVersion.replace(/_/g, '.')
+        this.info.osVersion = osVersion?.replace(/_/g, '.') ?? 'Unknown'
         return
       }
 
