@@ -1,6 +1,6 @@
 {
   "name": "@xuanmo/javascript-utils",
-  "version": "0.0.31",
+  "version": "0.0.32",
   "private": false,
   "author": {
     "name": "xuanmo",
@@ -40,5 +40,8 @@
   },
   "dependencies": {
     "@typescript-eslint/parser": "^4.27.0"
+  },
+  "hooks": {
+    "pre-commit": "npm test"
   }
 }

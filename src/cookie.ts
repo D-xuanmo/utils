@@ -10,12 +10,14 @@ class DCookie {
   }
 
   init() {
-    const cookies: CookieFormattedType = {}
-    document.cookie.split(/;\s/).forEach((item: string) => {
-      const [key, value] = item.split(/=/)
-      cookies[key] = value
-    })
-    this.cookies = cookies
+    if (typeof window !== 'undefined') {
+      const cookies: CookieFormattedType = {}
+      document.cookie.split(/;\s/).forEach((item: string) => {
+        const [key, value] = item.split(/=/)
+        cookies[key] = value
+      })
+      this.cookies = cookies
+    }
   }
 
   getItem(key: string) {

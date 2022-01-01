@@ -1,5 +1,3 @@
-import pkg from './package.json'
-
 import eslint from '@rollup/plugin-eslint'
 import typescript from '@rollup/plugin-typescript'
 import { uglify } from 'rollup-plugin-uglify'
