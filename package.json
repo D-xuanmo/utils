@@ -11,6 +11,7 @@
   "browser": "dist/javascript-utils.umd.min.js",
   "types": "dist/types/index.d.ts",
   "scripts": {
+    "prepare": "husky install",
     "dev": "npm run clear && rollup -c -w",
     "build": "npm run clear && rollup -c",
     "clear": "rimraf dist",
@@ -29,6 +30,7 @@
     "@rollup/plugin-eslint": "^8.0.1",
     "@rollup/plugin-node-resolve": "^13.0.0",
     "@rollup/plugin-typescript": "^8.2.1",
+    "husky": "^7.0.4",
     "jest": "^27.2.5",
     "rimraf": "^3.0.2",
     "rollup": "^2.52.1",
