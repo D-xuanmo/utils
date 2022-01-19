@@ -33,6 +33,16 @@ export const isFunction = (source: any): boolean => realType(source) === '[objec
 export const isImageUrl = (url: string): boolean => /\.((png)|(jpe?g)|(gif)|(svg)|(webp))$/gi.test(url)
 
 /**
+ * 转换 string 布尔值
+ * @param source
+ */
+export const toBoolean = (source: any): boolean => {
+  if (source === 'true') return true
+  if (source === 'false') return false
+  return Boolean(source)
+}
+
+/**
  * 是否为空
  * @param {any} source 任意数据
  * @returns {boolean}
