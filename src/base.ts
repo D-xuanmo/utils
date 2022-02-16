@@ -33,7 +33,13 @@ export const isFunction = (source: any): boolean => realType(source) === '[objec
 export const isImageUrl = (url: string): boolean => /\.((png)|(jpe?g)|(gif)|(svg)|(webp))$/gi.test(url)
 
 /**
- * 转换 string 布尔值
+ * 是否为纯数字
+ * @param source
+ */
+export const isNumber = (source: any): boolean => /^\d+$/.test(source + '')
+
+/**
+ * 转换 string 布尔值;
  * @param source
  */
 export const toBoolean = (source: any): boolean => {

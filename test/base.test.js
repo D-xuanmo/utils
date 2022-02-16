@@ -1,4 +1,4 @@
-const { toLowerCamelCase, isObject } = require('../dist/javascript-utils.cjs')
+const { toLowerCamelCase, isObject, isNumber } = require('../dist/javascript-utils.cjs')
 
 test('isObject', () => {
   expect(isObject({})).toBe(true)
@@ -16,4 +16,10 @@ test('toLowerCamelCase', () => {
   expect(toLowerCamelCase('is_system_admin')).toBe('isSystemAdmin')
   expect(toLowerCamelCase('user.name', ['\\.'])).toBe('userName')
   expect(toLowerCamelCase('is.system.admin', ['\\.'])).toBe('isSystemAdmin')
+})
+
+test('isNumber', () => {
+  expect(isNumber('222px')).toBe(false)
+  expect(isNumber(222)).toBe(true)
+  expect(isNumber('222')).toBe(true)
 })
