@@ -6,7 +6,7 @@
  * @param {function} duringCallback 倒计时进行中的回调函数
  */
 export default function countDown(time: number, timer: string, endCallback?: Function, duringCallback?: Function): (() => void) | undefined {
-  if (!window) throw new Error('window is not defind.')
+  if (!window) throw new Error('window is not defined.')
   if (time > 0) {
     duringCallback && duringCallback()
     time--
