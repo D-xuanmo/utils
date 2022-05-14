@@ -28,9 +28,10 @@ import { debounce } from '@xuanmo/javascript-utils'
 |      isImageUrl      |        判断 url 是否为图片路径        |     ✔     |
 |      isNumber      |            是否为纯数字            |     ✔     |
 |       isEmpty        |             是否为空             |     ✔     |
-|       toBoolean        |             转换 string 布尔值             |     ✔     |
+|       toBoolean        |        转换 string 布尔值         |     ✔     |
 |   toLowerCamelCase   |           下划线转小驼峰            |     ✔     |
 |     toUnderline      |          小驼峰转下划线分割           |     ✔     |
+|     toPascalCase      |           中横线转大驼峰            |     ✔     |
 |   formatThousandth   |            数字千分位             |     ✔     |
 |      countDown       |             倒计时              |     ✖     |
 |       debounce       |              防抖              |     ✔     |
@@ -44,8 +45,10 @@ import { debounce } from '@xuanmo/javascript-utils'
 |     generateTree     |          一维数组转树形数据           |     ✔     |
 
 ### ua 示例
+
 ```js
 import { ua } from '@xuanmo/javascript-utils'
+
 console.log(ua())
 // console.log(ua('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36'))
 // {
