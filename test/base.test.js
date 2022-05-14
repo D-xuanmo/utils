@@ -1,4 +1,4 @@
-const { toLowerCamelCase, isObject, isNumber } = require('../dist/javascript-utils.cjs')
+const { toLowerCamelCase, isObject, isNumber, toPascalCase } = require('../dist/javascript-utils.cjs')
 
 test('isObject', () => {
   expect(isObject({})).toBe(true)
@@ -22,4 +22,9 @@ test('isNumber', () => {
   expect(isNumber('222px')).toBe(false)
   expect(isNumber(222)).toBe(true)
   expect(isNumber('222')).toBe(true)
+})
+
+test('toPascalCase', () => {
+  expect(toPascalCase('d-example-text')).toBe('DExampleText')
+  expect(toPascalCase('d-example')).toBe('DExample')
 })

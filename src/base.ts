@@ -97,6 +97,18 @@ export const toUnderline = (str: string): string => {
 }
 
 /**
+ * 中横线转大驼峰
+ * @param str
+ * @example
+ * toPascalCase('d-example-text') // DExampleText
+ */
+export const toPascalCase = (str: string): string => {
+  return str
+    .replace(/(-\w)/g, (_) => _.substr(1, 1).toUpperCase())
+    .replace(/^(\w)/, _ => _.toUpperCase())
+}
+
+/**
  * 生成随机值
  * @param {number} length 长度
  * @returns {string}
