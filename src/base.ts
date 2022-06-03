@@ -39,6 +39,12 @@ export const isImageUrl = (url: string): boolean => /\.((png)|(jpe?g)|(gif)|(svg
 export const isNumber = (source: any): boolean => /^\d+$/.test(source + '')
 
 /**
+ * 判断是否为布尔值
+ * @param source
+ */
+export const isBoolean = (source: any) => typeof source === 'boolean'
+
+/**
  * 转换 string 布尔值;
  * @param source
  */

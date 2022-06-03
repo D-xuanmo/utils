@@ -26,12 +26,13 @@ import { debounce } from '@xuanmo/javascript-utils'
 |       isRegexp       |           是否为正则表达式           |     ✔     |
 |      isFunction      |            是否为函数             |     ✔     |
 |      isImageUrl      |        判断 url 是否为图片路径        |     ✔     |
-|      isNumber      |            是否为纯数字            |     ✔     |
+|       isNumber       |            是否为纯数字            |     ✔     |
 |       isEmpty        |             是否为空             |     ✔     |
-|       toBoolean        |        转换 string 布尔值         |     ✔     |
+|      isBoolean       |            是否为布尔值            |     ✔     |
+|      toBoolean       |        转换 string 布尔值         |     ✔     |
 |   toLowerCamelCase   |           下划线转小驼峰            |     ✔     |
 |     toUnderline      |          小驼峰转下划线分割           |     ✔     |
-|     toPascalCase      |           中横线转大驼峰            |     ✔     |
+|     toPascalCase     |           中横线转大驼峰            |     ✔     |
 |   formatThousandth   |            数字千分位             |     ✔     |
 |      countDown       |             倒计时              |     ✖     |
 |       debounce       |              防抖              |     ✔     |
@@ -43,6 +44,8 @@ import { debounce } from '@xuanmo/javascript-utils'
 |          ua          | 对 `navigator.userAgent` 进行解析 |     ✖     |
 |       dCookie        |         `cookie` 操作          |     ✖     |
 |     generateTree     |          一维数组转树形数据           |     ✔     |
+|      throwError      |          统一报错信息处理           |     ✔     |
+|      debugWarn       |          警告信息统一处理           |     ✔     |
 
 ### ua 示例
 
