@@ -33,10 +33,22 @@ export const isFunction = (source: any): boolean => realType(source) === '[objec
 export const isImageUrl = (url: string): boolean => /\.((png)|(jpe?g)|(gif)|(svg)|(webp))$/gi.test(url)
 
 /**
- * 是否为纯数字
+ * 是否为整数
  * @param source
  */
-export const isNumber = (source: any): boolean => /^\d+$/.test(source + '')
+export const isInteger = (source: any): boolean => /^\d+$/.test(source + '')
+
+/**
+ * 是否为浮点数
+ * @param source
+ */
+export const isFloatNumber = (source: any): boolean => /^\d+\.\d+$/.test(source + '')
+
+/**
+ * 是否为数字
+ * @param source
+ */
+export const isNumber = (source: any): boolean => isInteger(source) || isFloatNumber(source)
 
 /**
  * 判断是否为布尔值
