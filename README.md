@@ -44,8 +44,9 @@ import { debounce } from '@xuanmo/javascript-utils'
 |          ua          | 对 `navigator.userAgent` 进行解析 |     ✖     |
 |       dCookie        |         `cookie` 操作          |     ✖     |
 |     generateTree     |          一维数组转树形数据           |     ✔     |
-|      throwError      |          统一报错信息处理           |     ✔     |
-|      debugWarn       |          警告信息统一处理           |     ✔     |
+|      throwError      |           统一报错信息处理           |     ✔     |
+|      debugWarn       |           警告信息统一处理           |     ✔     |
+|   deleteArrayItems   |         指定删除数组的某些元素          |     ✔     |
 
 ### ua 示例
 
