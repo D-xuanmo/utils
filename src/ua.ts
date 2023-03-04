@@ -153,7 +153,6 @@ class UA {
     const [, $1] = this.agent.match(/^[a-z]+\/\d+\.\d+\s?\(([a-z\d\s:;./_-]+)\)/i) || []
     try {
       let osVersion = ''
-      console.log($1)
       if (/Windows/i.test($1)) {
         const [, _osVersion] = $1.match(/NT\s(\d+\.\d+)/) || []
         this.info.os = 'Windows'

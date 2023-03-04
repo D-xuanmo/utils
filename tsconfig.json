@@ -17,7 +17,7 @@
     "emitDeclarationOnly": true,
     "declaration": true,
     "declarationMap": false,
-    "declarationDir": "./types",
+    "declarationDir": "types",
     "listEmittedFiles": true,
     "noImplicitThis": false
   },
