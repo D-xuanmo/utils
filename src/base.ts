@@ -131,9 +131,9 @@ export const toPascalCase = (str: string): string => {
  * @param {number} length 长度
  * @returns {string}
  */
-export const createRandomID = (length: number = 12): string => {
-  let result: string[] = []
-  let word = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
+export const createRandomID = (length = 12): string => {
+  const result: string[] = []
+  const word = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
   const wordLength = word.length
   for (let i = 0; i < length; i++) {
     result.push(word[Math.round(Math.random() * wordLength)])

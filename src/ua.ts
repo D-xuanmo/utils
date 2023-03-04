@@ -42,7 +42,7 @@ class UA {
    * 浏览器 navigator.userAgent
    * @private
    */
-  private agent = ''
+  agent = ''
 
   /**
    * 解析后的结果
@@ -205,7 +205,7 @@ class UA {
       }
 
       if ($1.indexOf('Android') !== -1) {
-        let [, _version] = $1.match(/Android\s((\d+\.?)+\d?)/) || []
+        const [, _version] = $1.match(/Android\s((\d+\.?)+\d?)/) || []
         this.info.device = 'Mobile'
         this.info.os = 'Android'
         this.info.osVersion = _version

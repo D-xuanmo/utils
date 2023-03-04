@@ -9,7 +9,7 @@ export default function deepCopy(data: any): any {
   if (isObject(data) || Array.isArray(data)) {
     const result: any = Array.isArray(data) ? [] : {}
 
-    for (let i in data) {
+    for (const i in data) {
       result[i] = deepCopy(data[i])
     }
 
