@@ -57,6 +57,12 @@ export const isNumber = (source: any): boolean => isInteger(source) || isFloatNu
 export const isBoolean = (source: any) => typeof source === 'boolean'
 
 /**
+ * 是否为 Promise
+ * @param source
+ */
+export const isPromise = (source: any) => realType(source) === '[object Promise]'
+
+/**
  * 转换 string 布尔值;
  * @param source
  */

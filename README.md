@@ -29,6 +29,7 @@ import { debounce } from '@xuanmo/javascript-utils'
 |       isNumber       |            是否为纯数字            |     ✔     |
 |       isEmpty        |             是否为空             |     ✔     |
 |      isBoolean       |            是否为布尔值            |     ✔     |
+|      isPromise       |         是否为 Promise          |     ✔     |
 |      toBoolean       |        转换 string 布尔值         |     ✔     |
 |   toLowerCamelCase   |           下划线转小驼峰            |     ✔     |
 |     toUnderline      |          小驼峰转下划线分割           |     ✔     |

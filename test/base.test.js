@@ -1,4 +1,12 @@
-const { toLowerCamelCase, isObject, isNumber, toPascalCase, isInteger, isFloatNumber } = require('../dist/javascript-utils.cjs')
+const {
+  toLowerCamelCase,
+  isObject,
+  isNumber,
+  toPascalCase,
+  isInteger,
+  isFloatNumber,
+  isPromise
+} = require('../dist/javascript-utils.cjs')
 
 test('isObject', () => {
   expect(isObject({})).toBe(true)
@@ -41,4 +49,12 @@ test('isFloatNumber', () => {
 test('toPascalCase', () => {
   expect(toPascalCase('d-example-text')).toBe('DExampleText')
   expect(toPascalCase('d-example')).toBe('DExample')
+})
+
+test('toPascalCase', () => {
+  const promise = new Promise((resolve) => {})
+  expect(isPromise(promise)).toBe(true)
+  expect(isPromise(promise.then)).toBe(false)
+  expect(isPromise(() => {})).toBe(false)
+  expect(isPromise({})).toBe(false)
 })
