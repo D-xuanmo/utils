@@ -1,4 +1,4 @@
-import { toPascalCase } from './base'
+import { toPascalCase } from './string'
 
 /**
  * 统一报错信息处理
