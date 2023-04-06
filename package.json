@@ -1,20 +1,19 @@
 {
   "name": "@xuanmo/javascript-utils",
-  "version": "0.0.44",
+  "version": "0.0.45",
   "private": false,
   "author": {
     "name": "xuanmo",
     "email": "me@xuanmo.xin"
   },
-  "type": "module",
   "main": "dist/javascript-utils.cjs.min.js",
   "module": "dist/javascript-utils.esm.min.js",
   "browser": "dist/javascript-utils.umd.min.js",
   "types": "dist/types/index.d.ts",
   "scripts": {
     "prepare": "husky install",
-    "dev": "npm run clear && rollup -c -w",
-    "build": "npm run clear && rollup -c",
+    "dev": "npm run clear && rollup -c -w --bundleConfigAsCjs",
+    "build": "npm run clear && rollup -c --bundleConfigAsCjs",
     "clear": "rimraf dist",
     "lint": "eslint src/**/*.ts --fix",
     "test": "jest test/"
