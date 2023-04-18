@@ -33,6 +33,6 @@ class DCookie {
   }
 }
 
-const instance = new DCookie()
+const dCookie = () => new DCookie()
 
-export default instance
+export { dCookie }
