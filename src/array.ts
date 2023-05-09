@@ -28,7 +28,7 @@ function deleteArrayItems(deleteItems: unknown[], source: unknown[], key?: strin
  * 选择数组的最后一项元素
  * @param source 数据源
  */
-export function pickLastItem<T>(source: T[]): T {
+export function pickLastItem<T extends unknown[] = []>(source: T): T[number] {
   return source[source.length - 1]
 }
 
