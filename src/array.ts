@@ -24,4 +24,12 @@ function deleteArrayItems(deleteItems: unknown[], source: unknown[], key?: strin
   return source.filter((item) => !deleteItems.includes(item))
 }
 
+/**
+ * 选择数组的最后一项元素
+ * @param source 数据源
+ */
+export function pickLastItem<T>(source: T[]): T {
+  return source[source.length - 1]
+}
+
 export { deleteArrayItems }
