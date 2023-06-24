@@ -1,4 +1,4 @@
-const { objectKeyToCamelCase } = require('../dist/javascript-utils.cjs')
+const { objectKeyToCamelCase } = require('../dist/index.cjs')
 
 const expected = {
   name: 'xuanmo',

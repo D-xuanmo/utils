@@ -6,7 +6,7 @@ const {
   isInteger,
   isFloatNumber,
   isPromise
-} = require('../dist/javascript-utils.cjs')
+} = require('../dist/index.cjs')
 
 test('isObject', () => {
   expect(isObject({})).toBe(true)

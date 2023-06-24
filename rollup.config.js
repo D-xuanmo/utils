@@ -22,16 +22,16 @@ export default [
     ...baseConfig,
     output: [
       {
-        file: 'dist/javascript-utils.cjs.js',
+        file: 'dist/index.cjs.js',
         format: 'cjs'
       },
       {
-        file: 'dist/javascript-utils.esm.js',
+        file: 'dist/index.esm.js',
         format: 'es'
       },
       {
         name: 'JSUtils',
-        file: 'dist/javascript-utils.umd.js',
+        file: 'dist/index.umd.js',
         format: 'umd'
       }
     ]
@@ -40,18 +40,18 @@ export default [
     ...baseConfig,
     output: [
       {
-        file: 'dist/javascript-utils.cjs.min.js',
+        file: 'dist/index.cjs.min.js',
         format: 'cjs',
         plugins: [uglify(uglifyOption)]
       },
       {
-        file: 'dist/javascript-utils.esm.min.js',
+        file: 'dist/index.esm.min.js',
         format: 'es',
         plugins: [uglify(uglifyOption)]
       },
       {
-        name: 'javascriptUtils',
-        file: 'dist/javascript-utils.umd.min.js',
+        name: 'jsUtils',
+        file: 'dist/index.umd.min.js',
         format: 'umd',
         plugins: [uglify(uglifyOption)]
       }
