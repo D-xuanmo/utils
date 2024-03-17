@@ -83,7 +83,7 @@ class UA {
       en: '2345Explorer',
       zh: '2345极速浏览器'
     },
-    'Mb2345Browser': {
+    Mb2345Browser: {
       en: 'Mb2345Browser',
       zh: '2345手机浏览器'
     },
@@ -93,7 +93,7 @@ class UA {
     'Edge?': {
       en: 'Edge'
     },
-    'OPR': {
+    OPR: {
       en: 'Opera'
     },
     Vivaldi: {

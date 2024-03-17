@@ -6,7 +6,7 @@
  */
 export const toLowerCamelCase = (str: string, separators?: string[]): string => {
   const _separators = [...(separators || []), '_'].join('|')
-  return str.replace(new RegExp(`((${_separators})[a-z])+`, 'g'), (match, $1) =>
+  return str.replace(new RegExp(`((${_separators})[a-z])+`, 'g'), (_match, $1) =>
     $1.replace(new RegExp(_separators), '').toLocaleUpperCase()
   )
 }
@@ -28,14 +28,13 @@ export const toUnderline = (str: string): string => {
  */
 export const toPascalCase = (str: string): string => {
   return str
-    .replace(/(-\w)/g, (_) => _.substr(1, 1).toUpperCase())
+    .replace(/(-\w)/g, (_) => _.substring(1, 1).toUpperCase())
     .replace(/^(\w)/, _ => _.toUpperCase())
 }
 
 /**
  * 生成随机值
- * @param {number} length 长度
- * @returns {string}
+ * @param length ID 长度，默认 12 位
  */
 export const createRandomID = (length = 12): string => {
   const result: string[] = []
