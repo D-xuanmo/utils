@@ -29,8 +29,8 @@ import { debounce } from '@xuanmo/utils'
 |       isNumber       |            是否为纯数字            |     ✔     |
 |       isEmpty        |             是否为空             |     ✔     |
 |      isBoolean       |            是否为布尔值            |     ✔     |
-|      isPromise       |         是否为 `Promise`          |     ✔     |
-|      toBoolean       |        转换 `string` 布尔值         |     ✔     |
+|      isPromise       |        是否为 `Promise`         |     ✔     |
+|      toBoolean       |       转换 `string` 布尔值        |     ✔     |
 |   toLowerCamelCase   |           下划线转小驼峰            |     ✔     |
 |     toUnderline      |          小驼峰转下划线分割           |     ✔     |
 |     toPascalCase     |           中横线转大驼峰            |     ✔     |
@@ -49,7 +49,8 @@ import { debounce } from '@xuanmo/utils'
 |      throwError      |           统一报错信息处理           |     ✔     |
 |      debugWarn       |           警告信息统一处理           |     ✔     |
 |   deleteArrayItems   |         指定删除数组的某些元素          |     ✔     |
-|    pickLastItem      |         选择数组的最后一项元素          |     ✔     |
+|     pickLastItem     |         选择数组的最后一项元素          |     ✔     |
+|      treeToMap       |          树形数据转 map           |     ✔     |
 
 ### ua 示例
 
