@@ -28,7 +28,7 @@ export const toUnderline = (str: string): string => {
  */
 export const toPascalCase = (str: string): string => {
   return str
-    .replace(/(-\w)/g, (_) => _.substring(1, 1).toUpperCase())
+    .replace(/(-\w)/g, (_) => _.substring(1, 2).toUpperCase())
     .replace(/^(\w)/, _ => _.toUpperCase())
 }
 
