@@ -1,4 +1,4 @@
-# JavaScript Utils [![Node.js CI](https://github.com/D-xuanmo/utils/actions/workflows/node.js.yml/badge.svg?branch=main)](https://github.com/D-xuanmo/utils/actions/workflows/node.js.yml)
+# JavaScript Utils [![Build Common](https://github.com/D-xuanmo/utils/actions/workflows/build.yml/badge.svg)](https://github.com/D-xuanmo/utils/actions/workflows/build.yml)
 
 > 常用工具函数
 
