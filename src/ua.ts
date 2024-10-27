@@ -115,7 +115,7 @@ class UA {
    */
   constructor(userAgent: string) {
     this.agent = userAgent
-    this.init()
+    this.format()
     const { browser, browserVersion, osVersion } = this.info
     this.info = {
       ...this.info,
@@ -125,7 +125,7 @@ class UA {
     }
   }
 
-  private init() {
+  private format() {
     try {
       this.getSystemName()
       this.getBrowserName()
@@ -180,7 +180,7 @@ class UA {
       }
 
       if (/^Macintosh/i.test($1)) {
-        [, osVersion] = $1.match(/X\s((\d+(_|\.))+\d+)/) || []
+        [, osVersion] = $1.match(/X\s((\d+([_.]))+\d+)/) || []
         this.info.os = 'Macintosh'
         this.info.device = 'PC'
         this.info.osVersion = osVersion?.replace(/_/g, '.') ?? 'Unknown'
@@ -237,11 +237,11 @@ class UA {
 
     this.info = {
       ...this.info,
-      ...this._formatBrowserVersion(browser[0])
+      ...this.formatBrowserVersion(browser[0])
     }
   }
 
-  _formatBrowserVersion(str: string): Browser {
+  private formatBrowserVersion(str: string): Browser {
     try {
       // ie 浏览器版本对照
       const ieVersionMap: any = {
@@ -250,12 +250,13 @@ class UA {
         '6.0': 10,
         '7.0': 11
       }
-      const { name, version } = str.match(/(?<name>[a-z\d]+)(\/|\s)(?<version>(\d+\.)+\d+)/i)?.groups ?? {}
+
+      const [name, , version] = str.match(/([a-z\d]+)(\/|\s)((\d+\.)+\d+)/i) || []
 
       // 遍历查出浏览器名称，名称支持正则所以需要遍历查找
       let browserName: any = {}
       for (const [key, value] of Object.entries(this.browserNameMap)) {
-        if (new RegExp(key).test(name)) {
+        if (new RegExp(key).test(name!)) {
           browserName = value
           break
         }
@@ -283,7 +284,7 @@ class UA {
   }
 }
 
-export default function(agent = navigator.userAgent) {
+export const ua = (agent = navigator.userAgent) => {
   const ua: UA = new UA(agent)
   return ua.info
 }

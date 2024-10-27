@@ -38,10 +38,32 @@ export const toPascalCase = (str: string): string => {
  */
 export const createRandomID = (length = 12): string => {
   const result: string[] = []
-  const word = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
+  const word = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
   const wordLength = word.length
   for (let i = 0; i < length; i++) {
     result.push(word[Math.round(Math.random() * wordLength)])
   }
   return result.join('')
 }
+
+/**
+ * 首字母大写
+ * @param str
+ */
+export const firstLetterUppercase = <T extends string>(str: T) => {
+  const [first, ...rest] = str
+  return `${first.toUpperCase()}${rest.join('')}` as FirstLetterUppercase<T>
+}
+
+/**
+ * 首字母小写
+ * @param str
+ */
+export const firstLetterLowercase = <T extends string>(str: T) => {
+  const [first, ...rest] = str
+  return `${first.toLowerCase()}${rest.join('')}` as FirstLetterLowercase<T>
+}
+
+export type FirstLetterUppercase<T extends string> = T extends `${infer First}${infer Rest}` ? `${Uppercase<First>}${Rest}` : T
+
+export type FirstLetterLowercase<T extends string> = T extends `${infer First}${infer Rest}` ? `${Lowercase<First>}${Rest}` : T

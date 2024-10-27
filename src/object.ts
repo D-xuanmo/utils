@@ -30,3 +30,18 @@ export function objectKeyToCamelCase(source: any, filterKey?: string, separator?
   }
   return result
 }
+
+/**
+ * 排除对象中的某些属性
+ * @param data 原始对象
+ * @param keys 要排除的属性
+ */
+export function exclude<T extends Record<string, any>, K extends keyof T>(data: T, keys: K[]) {
+  const result = {} as T
+  for (const [key, value] of Object.entries(data)) {
+    if (!keys.includes(key as K)) {
+      result[key as K] = value
+    }
+  }
+  return result as Exclude<T, K>
+}

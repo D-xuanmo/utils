@@ -19,38 +19,38 @@ import { debounce } from '@xuanmo/utils'
 
 ### 已有方法
 
-|         工具名          |              描述              | Nodejs 可用 |
-|:--------------------:|:----------------------------:|:---------:|
-|       realType       |           获取数据真实类型           |     ✔     |
-|       isObject       |            是否为对象             |     ✔     |
-|       isRegexp       |           是否为正则表达式           |     ✔     |
-|      isFunction      |            是否为函数             |     ✔     |
-|      isImageUrl      |        判断 url 是否为图片路径        |     ✔     |
-|       isNumber       |            是否为纯数字            |     ✔     |
-|       isEmpty        |             是否为空             |     ✔     |
-|      isBoolean       |            是否为布尔值            |     ✔     |
-|      isPromise       |        是否为 `Promise`         |     ✔     |
-|      toBoolean       |       转换 `string` 布尔值        |     ✔     |
-|   toLowerCamelCase   |           下划线转小驼峰            |     ✔     |
-|     toUnderline      |          小驼峰转下划线分割           |     ✔     |
-|     toPascalCase     |           中横线转大驼峰            |     ✔     |
-|   formatThousandth   |            数字千分位             |     ✔     |
-|      countDown       |             倒计时              |     ✖     |
-|       debounce       |              防抖              |     ✔     |
-|  debounceDecorator   |            防抖装饰器版            |     ✔     |
-|       deepCopy       |             深拷贝              |     ✔     |
-|     searchParams     |        获取 URL 单个查询参数         |     ✔     |
-|  formatQueryParams   |        获取 URL 全部查询参数         |     ✔     |
-|    createRandomID    |           生成随机 ID            |     ✔     |
-| objectKeyToCamelCase |      Object key 转换为小驼峰       |     ✔     |
-|          ua          | 对 `navigator.userAgent` 进行解析 |     ✖     |
-|       dCookie        |         `cookie` 操作          |     ✖     |
-|     generateTree     |          一维数组转树形数据           |     ✔     |
-|      throwError      |           统一报错信息处理           |     ✔     |
-|      debugWarn       |           警告信息统一处理           |     ✔     |
-|   deleteArrayItems   |         指定删除数组的某些元素          |     ✔     |
-|     pickLastItem     |         选择数组的最后一项元素          |     ✔     |
-|      treeToMap       |          树形数据转 map           |     ✔     |
+|工具名|描述|Nodejs 可用|
+|:----:|:---:|:------:|
+|realType|获取数据真实类型|✔|
+|isObject|是否为对象|✔|
+|isRegexp|是否为正则表达式|✔|
+|isFunction|是否为函数|✔|
+|isImageUrl|判断 URL 是否为图片路径|✔|
+|isNumber|是否为纯数字|✔|
+|isEmpty|是否为空|✔|
+|isBoolean|是否为布尔值|✔|
+|isPromise|是否为 `Promise`|✔|
+|toBoolean|转换 `string` 布尔值|✔|
+|toLowerCamelCase|下划线转小驼峰|✔|
+|toUnderline|小驼峰转下划线分割|✔|
+|toPascalCase|中横线转大驼峰|✔|
+|formatThousandth|数字千分位|✔|
+|countDown|倒计时|✖|
+|debounce|防抖|✔|
+|debounceDecorator|防抖装饰器版|✔|
+|deepCopy|深拷贝|✔|
+|createRandomID|生成随机ID|✔|
+|objectKeyToCamelCase|Object key转换为小驼峰|✔|
+|ua|对 `navigator.userAgent` 进行解析|✖|
+|dCookie|`cookie` 操作|✖|
+|generateTree|一维数组转树形数据|✔|
+|throwError|统一报错信息处理|✔|
+|debugWarn|警告信息统一处理|✔|
+|deleteArrayItems|指定删除数组的某些元素|✔|
+|pickLastItem|选择数组的最后一项元素|✔|
+|treeToMap|树形数据转 map|✔|
+|firstLetterLowercase|首字母小写|✔|
+|firstLetterUppercase|首字母大写|✔|
 
 ### ua 示例
 

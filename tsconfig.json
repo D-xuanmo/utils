@@ -9,11 +9,15 @@
     "allowJs": false,
     "strict": true,
     "noUnusedLocals": true,
+    "downlevelIteration": true,
     "experimentalDecorators": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "removeComments": false,
-    "lib": ["esnext", "dom"],
+    "lib": [
+      "esnext",
+      "dom"
+    ],
     "emitDeclarationOnly": true,
     "declaration": true,
     "declarationMap": false,

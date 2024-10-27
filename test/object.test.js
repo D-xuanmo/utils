@@ -1,4 +1,4 @@
-const { objectKeyToCamelCase } = require('../dist/index.cjs')
+const { objectKeyToCamelCase, exclude } = require('../dist/index.cjs')
 
 const expected = {
   name: 'xuanmo',
@@ -36,4 +36,9 @@ const received = {
 
 test('objectKeyToCamelCase', () => {
   expect(JSON.stringify(objectKeyToCamelCase(expected, '', ['\\.']))).toBe(JSON.stringify(received))
+})
+
+test('exclude', () => {
+  const obj = { a: 1, b: 2, c: 3 }
+  expect(exclude(obj, ['a'])).toEqual({ b: 2, c: 3 })
 })
