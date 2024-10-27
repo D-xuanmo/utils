@@ -6,25 +6,30 @@ on:
       - main
     paths:
       - 'package.json'
-      - '.github/workflows/node.js.yml'
+      - '.github/workflows/build.yml'
 
 jobs:
   publish-npm:
-
     runs-on: macos-latest
-
-    # 任务的步骤
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 16.17.0
           registry-url: https://registry.npmjs.org/
+      - run: corepack enable
 
-      - run: npm install
-      - run: npm run build
-      - run: npm publish --access public
+      - shell: bash
+        name: Log yarn version
+        run: yarn -v
 
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Install
+        run: YARN_ENABLE_IMMUTABLE_INSTALLS=false yarn
+
+      - name: Build
+          - run: npm run build
+          - run: npm publish --access public
+
+            env:
+              NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+              NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
