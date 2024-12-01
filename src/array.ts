@@ -32,4 +32,26 @@ export function pickLastItem<T extends unknown[] = []>(source: T): T[number] {
   return source[source.length - 1]
 }
 
+/**
+ * 合并两个数组，只会合并一级对象
+ * @param target 目标数组
+ * @param source 源数组
+ * @param uniqueKey 唯一标识
+ */
+export function mergeObjectArray<T extends Record<string, any>>(target: T[], source: T[], uniqueKey: keyof T): T[] {
+  const map = new Map<string, T>()
+  source.forEach((item: T) => {
+    map.set(item[uniqueKey], item)
+  })
+  target.forEach((item: T) => {
+    const sourceItem = map.get(item[uniqueKey])
+    if (sourceItem) {
+      map.set(item[uniqueKey], { ...sourceItem, ...item })
+    } else {
+      map.set(item[uniqueKey], item)
+    }
+  })
+  return Array.from(map.values())
+}
+
 export { deleteArrayItems }

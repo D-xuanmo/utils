@@ -47,6 +47,7 @@ import { debounce } from '@xuanmo/utils'
 |throwError|统一报错信息处理|✔|
 |debugWarn|警告信息统一处理|✔|
 |deleteArrayItems|指定删除数组的某些元素|✔|
+|mergeObjectArray|合并两个数组|✔|
 |pickLastItem|选择数组的最后一项元素|✔|
 |treeToMap|树形数据转 map|✔|
 |firstLetterLowercase|首字母小写|✔|
