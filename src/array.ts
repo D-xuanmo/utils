@@ -54,4 +54,17 @@ export function mergeObjectArray<T extends Record<string, any>>(target: T[], sou
   return Array.from(map.values())
 }
 
+/**
+ * 数组去重
+ * @param source 数据源
+ * @param key 唯一标识
+ */
+export function unique<T extends Record<string, any>, K extends keyof T>(source: T[], key: K): T[] {
+  const map = new Map<K, T>()
+  for (let i = 0; i < source.length; i++) {
+    map.set(source[i][key], source[i])
+  }
+  return Array.from(map.values())
+}
+
 export { deleteArrayItems }
